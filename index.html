@@ -184,35 +184,6 @@ git log --graph --all
        </pre>
     </div>
 
-    <div class="step reduce" data-x="1000" data-y="2000">
-       <h1 class='error'>feature</h1>
-       <pre class='code'>
-# list all unmerged feature-branches
-feature list
-# list all feature-branches
-feature list -v
-       </pre>
-       <pre class='code'>
-# creates a new branch of master
-feature start name-of-feature
-# does git-checkout
-feature switch name-of-feature
-# merges back into master
-feature finish name-of-feature
-       </pre>
-       <pre class='code'>
-# lists all stashes on the current branch
-feature stashes
-       </pre>
-    </div>
-
-    <div class="step" data-x="2000" data-y="2000">
-       <h1 class='error'>hotfix</h1>
-       <h3>exactly like feature</h3>
-       <p>But merges into / branches from 'stable' and
-       all branches are hotfix-*</p>
-    </div>
-
     <script src="js/impress.js"></script>
     <script>impress();</script>
 </body>
