@@ -1,6 +1,9 @@
 Git Talk Slide Notes
 ====================
 
+# TODO: Add slide about nothing ever actually being deleted (git reflog)
+# TODO: Add slide about git rebase and interactive rebase winsauce!
+
 1.) Git is centralized and as a result doesn't have a single point of 
 failure. Each developer who checks out a repository has the full history 
 of each checked out branch available locally.
