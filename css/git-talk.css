@@ -40,6 +40,18 @@ pre.code {
    color: #c55;
 }
 
+.faded {
+   color: gray;
+}
+
+.faded a {
+   color: gray;
+}
+
 .step.reduce {
    font-size:0.8em;
+}
+
+.right {
+   float: right;
 }
