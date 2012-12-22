@@ -10,6 +10,7 @@
 <div id="impress" class="">
     <div class="step" data-x="0" data-y="0">
        <h1>git != svn</h1>
+       <div class="right faded"><small>"Subversion users are stupid and ugly" - Linus Torvalds</small></div>
     </div>
 
     <div class="step" data-x="1000" data-y="0">
@@ -21,11 +22,21 @@
        <h2>git repos are lightweight</h2>
     </div>
 
+    <div class="step" data-x="1000" data-y="0" data-scale="0.1">
+       <h1>Introduce yourself to git:</h1>
+       <pre class='code'>
+git config --global user.name "Your Name"
+git config --global user.email your@email.com
+       </pre>
+       <br /><br />
+       <div class="faded"><small>Example ~/.gitconfig at <a href="http://digitalprognosis.com/opensource/gitconfig">http://digitalprognosis.com/opensource/gitconfig</a></small></div>
+    </div>
+
     <div class="step" data-x="2000" data-y="0">
        <h1>do this:</h1>
        <pre class='code'>
 cd
-git clone git@github.com:iFixit/git-talk.git
+git clone git@github.com:SEJeff/git-talk.git
 cd git-talk
 git fetch
 vim index.html
@@ -33,8 +44,8 @@ vim index.html
     </div>
 
     <div class="step" data-x="2000" data-y="-1000">
-       <img style='float:right;height:500px;' src='http://www.ericsink.com/scm/1764_image001.jpg'/>
-       <h1>git is a DAG</h1>
+       <img style='height:500px;' class="right" src='http://www.ericsink.com/scm/1764_image001.jpg'/>
+       <h1>git is a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_NEW">DAG</a></h1>
        <h4>branches are just pointers</h4>
        <pre class='code'>
 git branch -a -v
@@ -64,7 +75,7 @@ man git-log
        </pre>
     </div>
 
-    <div class="step" data-x="3000" data-y="0">
+    <div class="step reduce" data-x="3000" data-y="0">
        <h1>Branches</h1>
        <h3>List:</h3>
        <pre class='code'>
@@ -73,6 +84,10 @@ git branch -a -v
        <h3>Create:</h3>
        <pre class='code'>
 git branch branch-name [points-to]
+       </pre>
+       <h3>Create and checkout:</h3>
+       <pre class='code'>
+git checkout -b branch-name
        </pre>
     </div>
 
@@ -178,35 +193,6 @@ git checkout master
 git commit --amend
 git log --graph --all
        </pre>
-    </div>
-
-    <div class="step reduce" data-x="1000" data-y="2000">
-       <h1 class='error'>feature</h1>
-       <pre class='code'>
-# list all unmerged feature-branches
-feature list
-# list all feature-branches
-feature list -v
-       </pre>
-       <pre class='code'>
-# creates a new branch of master
-feature start name-of-feature
-# does git-checkout
-feature switch name-of-feature
-# merges back into master
-feature finish name-of-feature
-       </pre>
-       <pre class='code'>
-# lists all stashes on the current branch
-feature stashes
-       </pre>
-    </div>
-
-    <div class="step" data-x="2000" data-y="2000">
-       <h1 class='error'>hotfix</h1>
-       <h3>exactly like feature</h3>
-       <p>But merges into / branches from 'stable' and
-       all branches are hotfix-*</p>
     </div>
 
     <script src="js/impress.js"></script>

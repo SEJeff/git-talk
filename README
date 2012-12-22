@@ -1,0 +1,79 @@
+Git Talk Slide Notes
+====================
+
+# TODO: Add slide about nothing ever actually being deleted (git reflog)
+# TODO: Add slide about git rebase and interactive rebase winsauce!
+
+1.) Git is centralized and as a result doesn't have a single point of 
+failure. Each developer who checks out a repository has the full history 
+of each checked out branch available locally.
+ 
+2.) A remote is simply another git repository in a different location. It 
+can be local via file://, or stored on a different host. Git natively 
+supports http/httpss, ssh, or native git:// protocols.
+
+3.) Metadata objects "references" in git parlance are compact. They  use 
+considerably less space than an equivalent svn repository including all 
+metadata.
+
+4.) Configure a global git user. This is the default user and email that 
+show up when you git commit.
+
+5.) # TODO: verify git fetch is needed and clarify fetch vs pull
+
+6.) # TODO: explain what a DAG is
+
+7.) "git push" - Pushes references from the current repository to a remote.
+    "git pull" - Fetches new and updated refs from a remote and merges 
+                 them "fast forwards" into the local repository's current 
+                 branch. It is literally a shortcut for the two commands:
+                 - git fetch origin
+                 - git merge FETCH_HEAD
+
+Running "git clone ..." fetches a remote repository and stores it locally 
+as a "non-bare" repository. Non-bare repositories are for humans and 
+contain the actual files to be hacked on. This is what the large majority 
+of users will ever know as a git repository.
+
+When creating a repository for others to push to (server side), it should 
+be created as a bare repository. Bare repositories tend to end with the 
+name ".git" by convention and don't show you any the files contained, only 
+git metadata.  While it is possible to push to a non-bare repository, it 
+is actively discouraged by git upstream.
+
+8.) All git commands have heavily documented man pages via man 
+git-$command.
+
+# TODO: Add eminem on git branches graphic after this slide
+
+9.) Unless you specify, new branches are created as clones of the current 
+branch.
+
+10.) Git was designed for merging lots of branches from various sources 
+that all might be worked on at different points in time. It had to be 
+robust. As a result, git has a concept of a "staging area" more formally 
+referred to as the index. The idea is that when commits are merged in, 
+they are first applied in the staging area and if there are no conflicts, 
+they'll be actually merged into the repository. This prevents a lot of 
+horrible brokenness, but is a bit confusing at first.
+
+11.) "git checkout file-name" - overwrites any local changes to file-name 
+and doesn't change anything currently staged in the index. There is a 
+command named "diffstat" which outputs similar results to git diff --stat. 
+It is nice to see (for big commits with lots of changes) what files have 
+changed and vaguely by how much.
+
+12.) Protip! Patch mode for "git add" is a very useful feature for adding 
+selected hunks out of a patch (diff) to the index.
+
+13.) Protip! You can't rebase and sometimes can't pull/merge with local 
+changes. Stash the changes first with "git stash", merge/rebase/pull to 
+your heart's content and then "git stash pop" to re-apply the changes.
+
+14.) Describe the concept of feature branches and why they are awesome.
+
+15.) If there are modifications to files tracked by git, it will show 
+something like "M index.html" as you switch branches.
+
+16.) A few other tools to view branches are "tig", "gitk", and "giggle"
+# TODO: Add links for tig and giggle

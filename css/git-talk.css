@@ -20,6 +20,10 @@ html {
     padding: 30px;
 }
 
+a {
+    color: white;
+}
+
 .step:not(.active) {
     opacity: 0.05;
 }
@@ -36,6 +40,18 @@ pre.code {
    color: #c55;
 }
 
+.faded {
+   color: gray;
+}
+
+.faded a {
+   color: gray;
+}
+
 .step.reduce {
    font-size:0.8em;
+}
+
+.right {
+   float: right;
 }
